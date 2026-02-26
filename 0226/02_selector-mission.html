@@ -17,8 +17,8 @@
     p:first-child {
             color : orange;
         }
-    /* div 태그 후손 중 2n에 해당하는 애들만 짧은 배경 노란색으로 */
-    div p:nth-child(2n) {
+    /* div 태그 후손 중 2n에 해당하는 문자가 쓰여있는 줄만 */
+    div p:nth-child(2n)::first-line {
         background-color: yellow;
     }
     /* 태그 뒤에 공간을 선택 */
