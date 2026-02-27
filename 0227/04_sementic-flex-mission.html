@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sementic과 flex를 사용해서 사이트를 만들어보자</title>
+</head>
+<body>
+    <!--
+    :pushpin: 미션
+    1. flex와 sementic 태그를 사용해서 사이트를 만들어보자
+    2. 사이트는 자유롭게 만들어도 되지만, 최소한 header, main,nav,aside, footer 태그는 사용해야 한다.
+    3. 디자인은 자유롭게 해도 되지만, 최소한 3개의 섹션이 있어야 한다.
+    4. 각 섹션에는 적어도 하나의 flex 아이템이 있어야 한다.
+    5. 완성된 사이트는 깃허브에 올려서 제출한다.
+  -->
+    <style>
+        main {
+            background-color: lightcoral;
+            display: flex 1;
+            justify-content: flex-start;
+            flex-direction : row;
+            border :#b27b7b
+        }
+            nav, aside {
+            width: 250px;
+            background-color: #264c96;
+            padding: 20px;
+            border-left: 1px solid #291f1f;
+            border-right: 1px solid #440f0f;
+            border : blue;
+            margin-top: 10px;
+            display: flex;
+        }
+
+        #default-bullet {
+            list-style-type: disc;
+        }
+        /* footer 스타일 넣기 */
+        footer {
+            background-color: #291f1f;
+            color : white;
+            
+        }
+                .dashed-box {
+            border: 1px dashed #a0c4ff;
+            background-color: #f4f9ff;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+    <header>
+        <h1>머리부(Header)</h1>
+    </header>
+        
+    <div class="flex-container">네비게이션(Nav)
+        <nav>
+        <ul id="default-bullet">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </nav>
+    <main>
+            <h2>메인 콘텐츠(Main)</h2>
+            <div class="dashed-box">
+                <p>양옆은 고정폭, 가운데는 가변폭!</p>
+                </div>
+                <!-- 1번 아이템과 2번아이템은 줄바꿈이 되어야 한다. -->
+                    <p>Hint. 가운데 영역은 flex: 1로 남는 공간을 차지합니다.</p>
+        </main>
+    </section>
+
+        <aside>
+            <div class="flex-item">사이드바(Aside)</div>
+            <p>공지/광고/프로필 등</p>
+        </aside>
+    
+    </div>
+
+    
+
+    <footer>
+        <div class="flex-item">바닥부(Footer)</div>
+    </footer>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .flex-container {
+            display: flex;
+            flex: 1; /* header, footer 제외 남는 높이 전체 차지 */
+        }
+        </style>
+
+</body>
+</html>
