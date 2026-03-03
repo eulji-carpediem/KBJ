@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        .box{
+            width: 150px;
+            height: 250px;
+            background-color: aqua;
+            border: 2px solid blue;
+            border-radius: 15px;
+            
+            display: flex;
+            justify-content: flex-end; 
+            align-items: flex-end; 
+            
+            padding: 10px;
+        }
+        .circle {
+
+            position:relative;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgb(116, 116, 116);
+            border: 1px solid #000;
+            z-index: 99;
+        }
+        .text-area {
+            margin-top: 25px; /* 동그라미 공간만큼 띄워줌 */
+            padding: 0 5px;
+        }
+
+        .text-area p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="circle"></div>
+    </div>
+    
+        <div class="text-area">
+            <p>나른한 점심시간, 밖<br>에서 밥먹기</p>
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        .card {
+            width: 450px;
+            height: 180px;
+            background-color: #d38787; 
+            border-left: 0px solid #c89090; 
+            border-radius: 20px;
+            padding: 0px;
+            margin: 50px auto;
+        }
+        .left-box {
+            width: 180px;
+            height: 100%;
+            background-color: #ffb1b1;
+            border-radius: 15px;
+            float: left;
+        }
+        .right-content {
+            float: left;
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+
+        .label {
+            background-color: #ffc1c1;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block; /* 글자 크기만큼만 배경색 칠해짐 ㅇㅇ*/
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .text {
+            font-size: 18px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="left-box"></div>
+
+        <div class="right-content">
+            <div class="label">반가워요!</div>
+            <div class="title">좋은하루 보내세요!</div>
+            <div class="text">날씨가 좋네요!</div>
+        </div>
+    </div>
+
+</body>
+</html>

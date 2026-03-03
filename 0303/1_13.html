@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .card-wrap {
+            width: 250px;
+            border: 1px solid #ffcdd2; 
+            border-radius: 12px 12px 0px 0px;
+            overflow: hidden;
+            background-color: #ffcdd2;
+            margin: 20px;
+        }
+
+        .img-container {
+            width: 200px;
+            height: 150px;
+            background-image: url('assets/images/city2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .info-area {
+            padding: 15px;
+            background-color: aliceblue;
+        }
+
+        .text {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .profile-flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgb(42, 42, 42);
+            border: 1px solid #000;
+        }
+
+        .name {
+            font-size: 13px;
+            color: #555;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrap">
+        <div class="img-container"></div>
+
+        <div class="info-area">
+            <span class="text">안녕하세요. 텍스트입니다.</span>
+            
+            <div class="profile-flex">
+                <div class="circle"></div>
+                <span class="name">휴양조</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

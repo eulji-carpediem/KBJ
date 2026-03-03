@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        .box{
+            width: 400px;
+            height: auto;
+            border : solid gray;
+        }
+        .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "main"
+          "aside";
+
+        grid-template-columns: 1fr;  /*개사기*/
+        row-gap: 12px;
+        column-gap: 5px;
+        padding: 16px;
+        background-color: #d0d0d0;
+
+      }
+        .grid-item {
+        padding: 20px;
+        text-align: center;
+
+        color: white;
+
+        border : 3px solid black;
+      }
+        .header {
+        grid-area: header;
+        background-color: #ce8a77;
+      }
+        .main {
+        grid-area: main;
+        background-color: #205596;
+      }
+
+        .login-btn {
+        width: 200px;
+        height: 60px;
+        background-color: #18773f; 
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer; 
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+            <main class="grid-item main">
+            <h3>사이트를 더 안전하고 편하게 이용하세요.</h3>
+            <button class="login-btn">로그인</button>
+            <p>아이디 찾기 | 비밀번호 찾기 | 회원가입</p>
+        </main>
+    </div>
+    
+</body>
+</html>

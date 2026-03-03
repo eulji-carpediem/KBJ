@@ -24,7 +24,7 @@
             bottom: 0;
             height: 35%;
         
-            background: rgba(255, 168, 6, 0.75); /* 선택: 살짝 오렌지 톤 */
+            background: rgb(67, 67, 67); /* 선택: 살짝 오렌지 톤 */
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -37,29 +37,35 @@
 
             color: #fff;
             display: flex;
-            flex-direction: row;
-            justify-content: left;
+            justify-content: flex-start;
+            align-content: flex-end;
+            
             padding: 0 10px;
             font-size: 14px;
         }
-            .img-container .date{
-
-            color: #fff;
-            display: flex;
-            flex-direction: row;
-            justify-content: right;
-            padding: 0 10px;
-            font-size: 13px;
+            .box{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border : solid rgb(98, 98, 98);
+            background-color: rgb(78, 78, 78);
+            position: absolute;
+            /* 여기 원 조금 짤린거 아쉽다. */
+            left: 5;
+            right: 0;
+            bottom: -1;
+            z-index: 99;
         }
     </style>
 </head>
 <body>
         <div class="img-container">
-            <div class="text"> 
-                <h3>인테리어란?</h3>
+            <div class="box"></div>
+            <div class="text"> 새로운 시작!
                 <div class="author">김작가</div>
-                <span class="date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2024.01.01</span>
-                </div>
+            </div>
+
+        </div>
 
 </body>
 </html>
