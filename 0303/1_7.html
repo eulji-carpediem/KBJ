@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        .img-container{
+            width: 192px;
+            height: 128px;
+            background-image: url('assets/images/city2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative; /* overlay 기준 */
+            overflow: hidden;   /* overlay가 바깥으로 안 나가게 */
+        }
+
+        .img-container .text{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 20%;
+        
+            background: rgba(255, 168, 6, 0.75); /* 선택: 살짝 오렌지 톤 */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+        <div class="img-container">
+            <div class="text"> 안녕하세요!</div>
+        </div>
+
+</body>
+</html>
