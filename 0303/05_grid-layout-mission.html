@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Template Areas 예시</title>
+    <style>
+        *{box-sizing: border-box; /* 기준 사이즈를 보더 박스로- 디폴트는 content-box라서*/ }  /* 초기화 구문 꼭 이형태를 기억할 것.*/
+        body{ margin: 0; }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "nav main aside"
+          "nav main aside"
+          "footer footer footer";
+        grid-template-columns: 120px 1fr 135px;  /*개사기*/
+        grid-template-rows: 70px 1fr 1fr 60px;
+        row-gap: 12px;
+        column-gap: 5px;
+        padding: 16px;
+        background-color: #d0d0d0;
+        height: 100vh;
+      }
+
+      .grid-item {
+        padding: 20px;
+        text-align: center;
+
+        color: white;
+
+        border : 3px solid black;
+      }
+
+      .header {
+        grid-area: header;
+        background-color: #ce8a77;
+      }
+
+      .nav {
+        grid-area: nav;
+        background-color: #18a14f;
+      }
+      .aside {
+        grid-area: aside;
+        background-color: #264c96;
+
+        }
+      nav ul {
+            padding: 0;
+            list-style-type: disc;
+            margin-left: 20px;
+            
+      }
+      nav ul li {
+            margin-bottom: 10px;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: #205596;
+      }
+
+      .aside {
+        grid-area: aside;
+        background-color: #410009;
+      }
+
+      .footer {
+        grid-area: footer;
+        background-color: #94846b;
+      }
+
+      @media (max-width: 768px) {
+        .grid-container {
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+        grid-template-columns: 1fr ; /* 1열로 고정 */
+        grid-template-rows: 50px 180px 1fr 130px 65px;
+        padding: 5px;
+        gap : 10px;                 
+        }
+      }
+        .dashed-box {
+            border: 1px dashed #a0c4ff;
+            background-color: #f4f9ff;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: black;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-item header">Header</header>
+      <nav class="grid-item nav">Nav
+            <ul id="default-bullet">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+      <main class="grid-item main">
+            <h2>메인 콘텐츠(Main)</h2>
+            <div class="dashed-box">
+                <p>양옆은 고정폭, 가운데는 가변폭!</p>
+            </div>
+            <p>Hint. 가운데 영역은 flex: 1로 남는 공간을 차지합니다.</p>
+        </main>
+
+        <aside class="grid-item aside">
+            <h3>사이드바(Aside)</h3>
+            <p>공지/광고/프로필 등</p>
+        </aside>
+    </section>
+
+
+      <footer class="grid-item footer">바닥부(Footer)</footer>
+    </div>
+  </body>
+</html>
