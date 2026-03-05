@@ -55,7 +55,7 @@ getInfo = (name, age)=> {
 function Person(name,age){
     this.name = name;
     this.age = age;
-    Person.prototype.sayHello = function() {
+    this.sayHello = function() {
         console.log(`안녕하세요, 제 이름은 ${name} 이고 나이는 ${age}세입니다.`);
     }
     
