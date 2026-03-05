@@ -6,57 +6,57 @@
     <style>
         * { box-sizing: border-box; }
 
-        .card {
-            width: 450px;
-            height: 180px;
-            background-color: #d38787; 
-            border-left: 0px solid #c89090; 
-            border-radius: 20px;
+        .container {
+            width: 332px;
+            height: 100px;
+            background-color: #FFE4E4;  
+            border-radius: 8px;
             padding: 0px;
-            margin: 50px auto;
+            margin: 50px
         }
         .left-box {
-            width: 180px;
-            height: 100%;
+            width: 160px;
+            height: 100px;
             background-color: #ffb1b1;
-            border-radius: 15px;
-            float: left;
+            border-radius: 8px;
+            float : left;
         }
+
         .right-content {
             float: left;
             margin-left: 20px;
             padding-top: 10px;
         }
 
-        .label {
-            background-color: #ffc1c1;
+        .right-small-box {
+            width: 96px;
+            height: 19px;
+            background-color: #FFB9B9;
             color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            display: inline-block; /* 글자 크기만큼만 배경색 칠해짐 ㅇㅇ*/
-            margin-bottom: 15px;
-        }
+            padding: 2px;
+            border-radius: 2px;
+            font-size: 12px;
 
+        }
+      
         .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 16px;
+            color: #000000;
         }
 
         .text {
-            font-size: 18px;
-            color: #888;
+            font-size: 14px;
+            color: #8B8B8B;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <div class="container">
         <div class="left-box"></div>
 
         <div class="right-content">
-            <div class="label">반가워요!</div>
+            <div class="right-small-box">반가워요!</div>
             <div class="title">좋은하루 보내세요!</div>
             <div class="text">날씨가 좋네요!</div>
         </div>

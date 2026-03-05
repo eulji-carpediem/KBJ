@@ -8,58 +8,59 @@
         * { box-sizing: border-box; }
 
         .img-container{
-            width: 200px;
-            height: 300px;
+            width: 160px;
+            height: 240px;
+            margin: 16px;
+            background: #CA785C;
+            border-radius: 4px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 160px;
+            height: 172px;
             background-image: url('assets/images/city2.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative; /* overlay 기준 */
-            overflow: hidden;   /* overlay가 바깥으로 안 나가게 */
+            border-radius: 4px 4px 0 0;
         }
 
-        .img-container .text{
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 35%;
-        
-            background: rgba(255, 168, 6, 0.75); /* 선택: 살짝 오렌지 톤 */
+        .text{
+            width: 160px;
+            height: 19px;
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10px;
+            font-family: 'Inter';   /*어떤폰트?*/
+            font-style: normal;  /*기울기*/
+            font-weight: 700;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        .author{
+            width: 60px;
+            height: 17px;
+            font-family: Inter;
+            font-weight: 700;
             font-size: 14px;
+            color: white;
+            padding-left: 10px;
         }
-
-            .img-container .author{
-
-            color: #fff;
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            padding: 0 10px;
+        .date{
+            width: 100px;
+            height: 17px;
+            font-family: Inter;
+            font-weight: 700;
             font-size: 14px;
-        }
-            .img-container .date{
-
-            color: #fff;
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            padding: 0 10px;
-            font-size: 13px;
+            color: white;
+            padding-right: 6px;
+            text-align:end;
         }
     </style>
 </head>
 <body>
         <div class="img-container">
-            <div class="text"> 
-                <h3>인테리어란?</h3>
-                <div class="author">김작가</div>
-                <span class="date">2024.01.01</span>
-                </div>
-
+            <div class="box"></div>
+            <div class="text">인테리어란?</div>
+            <div class="author">김작가</div>
+            <div class="date">2024.01.01</div>
+        </div>    
 </body>
 </html>

@@ -8,75 +8,59 @@
         * { box-sizing: border-box; }
 
         .img-container{
-            width: 192px;
-            height: 128px;
-            background-image: url('assets/images/city2.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative; /* overlay 기준 */
-            overflow: hidden;   /* overlay가 바깥으로 안 나가게 */
+            width: 320px;
+            height: 320px;
+            margin: 12px;
+            background-image: url("assets/images/city2.jpg");
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
         }
 
-        .img-container .text{
-            left: 0;
-            right: 0;
-            bottom: 0;
-            
-        
-            color: #fff;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            font-size: 14px;
-            font-weight: bold;
+        .text{
+            width: 161px;
+            height: 29px;
+            margin: 16px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Inter';
+            font-style: normal;
+            font-size: 24px;
+            /* 인테리어 디자인 */
+
         }
         .box1{
             width: 30px;
             height: 30px;
+            margin: 20px;  /*16px 정도 주니까 옆으로 안밀려나서*/
             border-radius: 50%;
-            border : solid blue;
-            background-color: rgb(255, 0, 0);
-            position: absolute;
-            left: 5;
-            right: 0;
-            bottom: 0;
+            background-color: #E3FF92;
         }
         .box2{
             width: 30px;
             height: 30px;
+            margin: 20px;
             border-radius: 50%;
-            border : solid rgb(132, 197, 175);
-            background-color: rgb(46, 246, 129);
-            position: absolute;
-            /* 여기 원 조금 짤린거 아쉽다. */
-            left: 5;
-            right: 0;
-            bottom: -1;
+            background-color: #92F8FF;
+
         }
         .box3{
             width: 30px;
             height: 30px;
+            margin: 20px;
             border-radius: 50%;
-            border : solid rgb(246, 165, 67);
-            background-color: rgb(170, 12, 184);
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            background-color: #FF9292;
         }
     </style>
 </head>
 <body>
         <div class="img-container">
-            <div class="text"> 인테리어 디자인
-
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-            </div>
+            <div class="text">인테리어 디자인</div>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
         </div>
-
-
 
 </body>
 </html>
