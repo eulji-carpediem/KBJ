@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+      <h2>기존 내용</h2>
+    </div>
+
+    <button onclick="createElements()">요소 생성하기</button>
+
+    <script>
+      function createElements() {
+        const $container = document.getElementById("container");
+        const $addp = document.createElement("p");           //동적 요소 생성은 .createElement로
+        const $addspan = document.createElement("span");
+
+        const $text1 = document.createTextNode("안녕하세요! createElement로 만든 요소입니다.");
+        const $text2 = document.createTextNode("이 텍스트는 span입니다.");
+
+        $addp.appendChild($text1);
+        $addspan.appendChild($text2);
+
+        $container.appendChild($addp);
+        $container.appendChild($addspan);
+      }
+    </script>
+</body>
+</html>

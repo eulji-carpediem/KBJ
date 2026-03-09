@@ -89,21 +89,21 @@
     
     <script>
         function selectById(){
-            const $selectById =document.getElementById('#title');
-            title.innerHTML = "ID로 선택된 제목!";
-            title.style.color = "#dc3545";
+            const $selectById =document.getElementById('title');
+            $selectById.innerHTML = "ID로 선택된 제목!";
+            $selectById.style.color = "#dc3545";
         }
         function selectByClass(){
             const $selectByClass =document.getElementsByClassName('box')[0];
             $selectByClass.innerHTML ="클래스로 선택된 첫 번째 박스!";
             $selectByClass.style.backgroundColor="lightgreen";
-            $selectByClass.style.border= "solid #blue"
+            $selectByClass.style.border= "blue"
         }
         function selectByTag(){
             const $selectByTag =document.getElementsByTagName('p')[0];
             $selectByTag.style.backgroundColor="green";
             $selectByTag.innerHTML = "태그로 선택된 첫번째 p 요소";
-            $selectFirst.style.borderColor = "#blue";
+            $selectByTag.style.borderColor = "#blue";
         }
         function selectSpecial(){
             const $selectSpecial = document.getElementsByClassName("box")[1];
@@ -116,14 +116,37 @@
             }
 
         function selectFirst(){
-            const $selectFirst=document.querySelector(".container .box")
+            const $selectFirst=document.querySelector(".container .box");
             $selectFirst.innerHTML = "첫 번째 컨테이너의 첫 번째 박스!";
-            $selectFirst.style.backgroundColor = "#blue";
-
-
-
+            $selectFirst.style.backgroundColor = "blue";
+        }
+        function selectAll(){
+            const $selectAll=document.querySelectorAll(".box");
+            for (var i = 0; i < 3; i++) {
+          $selectAll[i].innerHTML = "모든 박스 " + (i + 1) + "번 변경!";
+          $selectAll[i].style.backgroundColor = "pink";
+        }
+      }
+        function selectComplex(){
+            const $selectComplex=document.querySelectorAll(".box");
+            $selectComplex[0].style.backgroundColor = "lightgreen";
+            $selectComplex[0].style.border = "2px dashed green";
+            $selectComplex[0].innerHTML = "복합 선택자로 선택됨.";
+            $selectComplex[2].style.backgroundColor = "lightgreen";
+            $selectComplex[2].style.border = "2px dashed green";
+            $selectComplex[2].innerHTML = "복합 선택자로 선택됨.";  // 각각 선택으로 때우기.
         }
 
+        function selectInput() {
+            const $selectInput = document.querySelector('input[type="text"]');
+            const $selectInput2 = document.querySelector('input[type="email"]');
+
+            $selectInput.value = "querySelector로 설정된 값";
+            $selectInput.style.backgroundColor = "orange";
+
+            $selectInput2.value = "test@example.com";
+            $selectInput2.style.backgroundColor = "lightblue";
+      }
     </script>
 </body>
 </html>
