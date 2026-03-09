@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .box {
+        padding: 15px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      .highlight {
+        background-color: #ffffcc;
+        border-color: #ffcc00;
+      }
+
+      .item {
+        padding: 8px;
+        margin: 5px 0;
+        background-color: #e9ecef;
+        border-left: 3px solid #007bff;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+</head>
+<body>
+    <div class="box">첫 번째 박스</div>
+    <div class="box">두 번째 박스</div>
+    <div class="box highlight">세 번째 박스(하이라이트)</div>
+
+    <div class="item">첫 번째 아이템</div>
+    <div class="item">두 번째 아이템</div>
+    <div class="item">세 번째 아이템</div>
+    <div class="item">네 번째 아이템</div>
+
+    <p class="highlight">하이라이트된 문단입니다.</p>
+
+    <button onclick="changeAllBox()">모든 박스 선택</button>
+    <button onclick="changeAllItem()">모든 아이템 선택</button>
+    <button onclick="changeHighlight()">하이라이트 요소들 선택</button>
+
+    <script>
+        function changeAllBox(){
+            const $changeAllBox = document.getElementsByClassName("box");
+            for (var i = 0; i < $changeAllBox.length; i++) {
+                $changeAllBox[i].innerHTML = "선택된 박스 " + (i + 1);
+                $changeAllBox[i].style.backgroundColor = "pink";
+            }
+        }
+
+        function changeAllItem(){
+            const $changeAllItem = document.getElementsByClassName("item");
+            for (var i = 0; i < $changeAllItem.length; i++) {
+                $changeAllItem[i].innerHTML = "새로운 아이템 " + (i + 1);
+                $changeAllItem[i].style.backgroundColor = "lightgreen";
+                $changeAllItem[i].style.borderLeftColor = "green";
+            }
+        }
+
+        function changeHighlight(){
+            const $changeHighlight = document.getElementsByClassName("highlight");
+            for (var i = 0; i < $changeHighlight.length; i++) {
+                $changeHighlight[i].innerHTML = $changeHighlight[i].innerHTML + "(수정됨)";
+                $changeHighlight[i].style.backgroundColor = "pink";
+                $changeHighlight[i].style.fontWeight = "bold";
+            }
+        }
+    </script>
+</body>
+</html>

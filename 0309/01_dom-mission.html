@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+        body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .box {
+        padding: 20px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+</style>
+<body>
+    <div id="box1" class="box"> 첫 번째 박스입니다.</div>
+    <div id="box2" class="box"> 첫 번째 박스입니다.</div>
+    <p id=message> 여기에 메세지가 표시됩니다.</p>
+
+    <button onclick="changeBox1();">첫 번째 박스</button>
+    <button onclick="changeBox2();">두 번째 박스</button>
+    <button onclick="changeMessage();">메세지 선택</button>
+
+    <script>
+        function changeBox1(){
+            const $changeBox1 =document.getElementById("box1");
+            console.log($changeBox1);
+            $changeBox1.innerHTML = "첫 번째 박스를 찾았습니다."
+            $changeBox1.style.backgroundColor = "red";
+        }
+        function changeBox2(){
+            const $changeBox2 =document.getElementById("box2");
+            console.log($changeBox2);
+            $changeBox2.innerHTML = "두 번째 박스를 찾았습니다."
+            $changeBox2.style.backgroundColor = "green";
+        }
+        function changeMessage(){
+            const $changeMessage =document.getElementById("message");
+            console.log($changeMessage);
+            $changeMessage.innerHTML="ID를 성공적으로 찾았습니다."
+            $changeMessage.style.color = "blue";
+            
+        }
+    </script>
+
+</body>
+</html>
