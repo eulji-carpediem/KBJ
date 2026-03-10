@@ -56,7 +56,7 @@
       function replaceWithHTML() {
         const $target = document.getElementById("target3");
         const $newDiv = document.createElement("div");
-        $newDiv.innerHTML = "<p>HTML 요소로 교체됨<p>";  //textContent와 달리 html요소 사용가능하긴함
+        $newDiv.innerHTML = "<p>HTML 요소로 교체됨</p>";  //textContent와 달리 html요소 사용가능하긴함
         $newDiv.className = "new2";
 
         $target.replaceWith($newDiv);
