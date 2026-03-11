@@ -13,12 +13,12 @@
     <form name="memberjoin">
 
         <label for="username">이름</label><br>
-        <input type="text" name="username" id="username" value="이름을 입력하세요">
+        <input type="text" name="username" id="username" placeholder="이름을 입력하세요">
 
         <br><br>
 
         <label for="email">이메일</label><br>
-        <input type="text" name="email" id="email" value="example@domain.com">
+        <input type="text" name="email" id="email" placeholder="example@domain.com">
 
         <br><br>
 
@@ -39,8 +39,8 @@
         <br><br>
 
         <label>요청사항</label><br>
-        <textarea name="introduce" id="introduce" rows="5" cols="30" 
-        style="resize: none;">저를 소개합니다!</textarea><br>
+        <textarea name="introduce" placeholder='요청사항을 입력하세요.' id="introduce" rows="5" cols="30" 
+        style="resize: none;"></textarea><br>
         <span id="charCount">0</span>/500자
 
         <br><br>
@@ -65,20 +65,7 @@
         $form.addEventListener('focusin', (e) => e.target.classList.add('focused'));
         $form.addEventListener('focusout', (e) => e.target.classList.remove('focused'));
         
-        const $introduce = $form.introduce; // (수정: $form.$introduce -> $form.introduce)
-        console.log($introduce.value);
-        $introduce.value = '요청사항을 입력하세요.'; // 폼을 가져와서 취득하고 변경하고 수정하는 작업.
 
-    </script>
-
-    <script>
-        $username.onfocus = (e) => {
-            e.target.classList.toggle('lightgray'); 
-        }
-
-        $username.onblur = (e) => {
-            e.target.classList.toggle('lightgray'); 
-        }
     </script>
 
 
