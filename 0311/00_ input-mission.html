@@ -30,7 +30,7 @@
 
         <label>참여 일자 선택</label>
         <select id="age" name="age">
-            <option value="0">- 날짜 선택 -</option>
+            <option value="0" selected disabled>- 날짜 선택 -</option>  <!--selected로 기본값 잡되, 날짜선택늘 누르면  disabled로 입력 다시 막기.-->
             <option value="11">2026년 3월 11일</option>
             <option value="12">2026년 3월 12일</option>
             <option value="13">2026년 3월 13일</option>
@@ -57,7 +57,7 @@
         const $form = document.forms.memberjoin;
 
         // form 태그에서 요소를 가져올 때는 id가 아니라 name을 주로 사용한다.
-        console.log($form.elements); // (수정: element -> elements)
+        console.log($form.elements);
         console.log($form.elements.username);
 
 
@@ -72,16 +72,6 @@
     <script>
         $age.addEventListener('change', () => alert('age change !'));
         $introduce.addEventListener('change', () => alert('introduce change!'));
-    </script>
-
-
-    <script>
-        $introduce.addEventListener('input', (e) => {
-            let len = e.target.value.trim().length; // 공백 제거 후 나머지 길이 재기
-
-            document.getElementById('charCount').textContent = len;
-            if(len>500){}
-        }) 
     </script>
 
 </body>
