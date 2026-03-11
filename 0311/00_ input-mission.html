@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOM & DOM Form 연습</title>
+    <title>BOM & DOM Form 연습 (최종 완성본)</title>
     <style>
         .lightgray { background: lightgray; }
         .focused { outline: 3px dashed yellow; }
+        /* 동의 시 글자 색상 변경을 위한 클래스 */
+        .agreed-text { color: blue; }
     </style>
 </head>
 <body>
     <form name="memberjoin">
 
         <label for="username">이름</label><br>
-        <input type="text" name="username" id="username" placeholder="이름을 입력하세요">
+        <input type="text" name="username" id="username" placeholder="이름을 입력하세요" required>
 
         <br><br>
 
         <label for="email">이메일</label><br>
-        <input type="text" name="email" id="email" placeholder="example@domain.com">
+        <input type="email" name="email" id="email" placeholder="example@domain.com" required>
 
         <br><br>
 
@@ -30,7 +32,7 @@
 
         <label>참여 일자 선택</label>
         <select id="age" name="age">
-            <option value="0" selected disabled>- 날짜 선택 -</option>  <!--selected로 기본값 잡되, 날짜선택늘 누르면  disabled로 입력 다시 막기.-->
+            <option value="0" selected disabled>- 날짜 선택 -</option>
             <option value="11">2026년 3월 11일</option>
             <option value="12">2026년 3월 12일</option>
             <option value="13">2026년 3월 13일</option>
@@ -40,7 +42,7 @@
 
         <label>요청사항</label><br>
         <textarea name="introduce" placeholder='요청사항을 입력하세요.' id="introduce" rows="5" cols="30" 
-        style="resize: none;"></textarea><br>
+        style="resize: none;" maxlength="500"></textarea><br>
         <span id="charCount">0</span>/500자
 
         <br><br>
@@ -49,30 +51,48 @@
     </form>
 
     <script>
-        // form 취득
-        // console.log(document.forms);
-        // console.log(document.forms.memberjoin);
-        // console.log(document.forms[0]);
-
         const $form = document.forms.memberjoin;
+        const $age = $form.age;
+        const $introduce = $form.introduce;
+        const $agree = $form.agree;
 
-        // form 태그에서 요소를 가져올 때는 id가 아니라 name을 주로 사용한다.
-        console.log($form.elements);
-        console.log($form.elements.username);
-
-
-        // (참고: focus/blur는 버블링이 안 되지만 focusin/focusout은 버블링이 된다.)
         $form.addEventListener('focusin', (e) => e.target.classList.add('focused'));
         $form.addEventListener('focusout', (e) => e.target.classList.remove('focused'));
-        
 
+        $introduce.addEventListener('input', (e) => {
+            let len = e.target.value.length;
+            document.getElementById('charCount').textContent = len;
+        });
+
+        $agree.addEventListener('change', (e) => {
+            const boldText = $agree.nextElementSibling; 
+            if (e.target.checked) {
+                boldText.classList.add('agreed-text');
+            } else {
+                boldText.classList.remove('agreed-text');
+            }
+        });
+
+
+        $form.addEventListener('submit', (e) => {
+            if ($age.value === "0") {
+                alert("참여 일자를 선택해주세요!");
+                e.preventDefault(); // 새로고침 방지
+                $age.focus();       
+                return;           
+            }
+
+
+            if (!$agree.checked) {
+                alert("개인정보 수집에 동의하셔야 신청이 가능합니다.");
+                e.preventDefault(); // 제출 방지
+                $agree.focus();
+                return;
+            }
+
+
+            alert("신청이 성공적으로 완료되었습니다!");
+        });
     </script>
-
-
-    <script>
-        $age.addEventListener('change', () => alert('age change !'));
-        $introduce.addEventListener('change', () => alert('introduce change!'));
-    </script>
-
 </body>
 </html>
