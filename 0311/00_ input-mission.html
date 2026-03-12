@@ -7,8 +7,6 @@
     <style>
         .lightgray { background: lightgray; }
         .focused { outline: 3px dashed yellow; }
-        /* 동의 시 글자 색상 변경을 위한 클래스 */
-        .agreed-text { color: blue; }
     </style>
 </head>
 <body>
@@ -42,7 +40,7 @@
 
         <label>요청사항</label><br>
         <textarea name="introduce" placeholder='요청사항을 입력하세요.' id="introduce" rows="5" cols="30" 
-        style="resize: none;" maxlength="500"></textarea><br>
+        style="resize: none;" maxlength="500"></textarea><br> <!--구글링-->
         <span id="charCount">0</span>/500자
 
         <br><br>
@@ -84,7 +82,7 @@
 
 
             if (!$agree.checked) {
-                alert("개인정보 수집에 동의하셔야 신청이 가능합니다.");
+                alert("개인정보 수집에 동의하셔야 신청이 가능합니다.");  // 알트말고 필수항목으로 넣기 누락..
                 e.preventDefault(); // 제출 방지
                 $agree.focus();
                 return;
